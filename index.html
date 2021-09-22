@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kindle Clippings Viewer</title>
+    <meta name="description" content="">
+    <meta name="author" content="https://github.com/juscelinodjj">
+    <meta name="robots" content="index, nofollow">
+    <meta name="theme-color" content="#fff">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js', {scope: './'})
+          .then(registration => console.log('Service worker registrado com sucesso:'))
+          .catch(error => console.log('Service worker falhou ao registrar:', error));
+      } else {
+        console.log('Service workers não é suportado pelo navegador!.');
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Olá Mundo!</h1>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
