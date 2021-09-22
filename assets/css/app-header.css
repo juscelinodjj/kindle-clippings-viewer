@@ -1,0 +1,31 @@
+.header {
+  background-color: #fff;
+  border-bottom: 1px solid #ebebeb;
+  box-sizing: border-box;
+  height: 50px;
+  padding: 0 40px;
+}
+
+.header .title {
+  color: #707f8e;
+  display: inline-block;
+  font-size: 20px;
+  padding: 15px;
+}
+
+.header .button-upload {
+  background-color: transparent;
+  border: 1px solid #d4d4d4;
+  color: #707f8e;
+  cursor: pointer;
+  float: right;
+  font-size: 16px;
+  font-family: inherit;
+  margin-top: 7px;
+  padding: 6px 10px;
+}
+
+.header .button-upload i {
+  color: #8a96a3;
+  margin-right: 10px;
+}

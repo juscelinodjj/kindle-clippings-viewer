@@ -17,8 +17,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/app-header.css">
+    <link rel="stylesheet" href="assets/css/app-section-clippings.css">
+    <link rel="stylesheet" href="assets/css/app-sidebar.css">
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js', {scope: './'})
@@ -30,7 +34,72 @@
     </script>
   </head>
   <body>
-    <h1>Olá Mundo!</h1>
+    <div class="app">
+
+      <div class="header">
+        <h1 class="title">Kindle Clippings Viewer</h1>
+        <button class="button-upload">
+          <i class="fa fa-upload"></i>Load file
+        </button>
+      </div>
+
+      <div class="section-clippings">
+        <div class="section-info">
+          <span class="span-book">Título</span>
+          <span class="span-author">Autor</span>
+        </div>
+        <div class="section-container">
+          <div class="section-clipping">
+            <span class="span-text">Lorem Ipsum</span>
+            <div class="footer">
+              <div class="left">
+                <span class="span-type">Destaque</span>
+                <span class="span-page">Página 00</span>
+                <span class="span-position">Posição 00-00</span>
+              </div>
+              <div class="right">
+                <span class="span-date">Adicionado: segunda-feira, 01 de Janeiro de 2021 00:00:00</span>
+              </div>
+            </div>
+          </div>
+          <div class="section-clipping">
+            <span class="span-text">Lorem Ipsum</span>
+            <div class="footer">
+              <div class="left">
+                <span class="span-type">Nota</span>
+                <span class="span-page">Página 00</span>
+                <span class="span-position">Posição 00-00</span>
+              </div>
+              <div class="right">
+                <span class="span-date">Adicionado: segunda-feira, 01 de Janeiro de 2021 00:00:00</span>
+              </div>
+            </div>
+          </div>
+          <div class="section-clipping">
+            <div class="footer">
+              <div class="left">
+                <span class="span-type">Marcador</span>
+                <span class="span-page">Página 00</span>
+                <span class="span-position">Posição 00-00</span>
+              </div>
+              <div class="right">
+                <span class="span-date">Adicionado: segunda-feira, 01 de Janeiro de 2021 00:00:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-container">
+          <div class="button">
+            <span class="span-title">Título</span>
+            <span class="span-author">Autor</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
     <script src="assets/js/app.js"></script>
   </body>
 </html>

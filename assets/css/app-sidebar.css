@@ -1,0 +1,60 @@
+.sidebar {
+  background-color: #fff;
+  border-left: 1px solid #ececec;
+  box-sizing: border-box;
+  float: right;
+  height: calc(100% - 50px);  /* header */
+  overflow: hidden;
+  padding: 15px 5px 0 15px;
+  width: 320px;
+}
+
+.sidebar .sidebar-container {
+  height: calc(100% - 15px); /* padding bottom */
+  overflow: auto;
+  padding-right: 10px;
+}
+
+/* scrollbar on Firefox */
+.sidebar .sidebar-container {
+  scrollbar-width: thin;
+  scrollbar-color: #d4d4d4 transparent;
+}
+
+/* scrollbar on Chrome, Edge, and Safari */
+.sidebar .sidebar-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.sidebar .sidebar-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar .sidebar-container::-webkit-scrollbar-thumb {
+  background-color: #d4d4d4;
+  border: 2px solid transparent;
+}
+
+.sidebar .sidebar-container .button {
+  border: 1px solid #d4d4d4;
+  color: #9e9fa2;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 15px;
+  padding: 8px 0 8px 10px;
+}
+
+.sidebar .sidebar-container .button:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar .sidebar-container .button:hover {
+  color: #75767b;
+}
+
+.sidebar .sidebar-container .button .span-author {
+  color: #bbbbbd;
+  display: block;
+  font-size: 14px;
+  margin-top: 8px;
+}
