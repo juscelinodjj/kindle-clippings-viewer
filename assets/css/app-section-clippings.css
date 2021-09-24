@@ -80,6 +80,10 @@
   font-size: 12px;
 }
 
+.section-clippings .section-container .section-clipping .footer .left .span-type {
+  text-transform: capitalize;
+}
+
 .section-clippings .section-container .section-clipping .footer .left .span-type,
 .section-clippings .section-container .section-clipping .footer .left .span-page {
   margin-right: 10px;

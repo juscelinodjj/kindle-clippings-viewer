@@ -11,3 +11,7 @@ html, body {
   margin: 0 auto;
   max-width: 1280px;
 }
+
+.app .input-file {
+  display: none;
+}
