@@ -19,6 +19,9 @@
   color: #8c9397;
   display: block;
   font-size: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .section-clippings .section-info .span-author {
@@ -99,4 +102,40 @@
 .section-clippings .section-container .section-clipping .footer .right .span-date {
   color: #808b96;
   font-size: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+  .section-clippings {
+    float: none;
+    padding: 0 10px;
+    width: 100%;
+  }
+
+  .section-clippings .section-info {
+    margin: 10px auto;
+  }
+
+  .section-clippings .section-info .span-book {
+    font-size: 18px;
+  }
+
+  .section-clippings .section-container {
+    height: calc(100% - 67px);
+  }
+
+  .section-clippings .section-container .section-clipping {
+    margin-bottom: 10px;
+  }
+
+  .section-clippings .section-container .section-clipping .footer .left {
+    padding: 0;
+    width: 100%
+  }
+
+  .section-clippings .section-container .section-clipping .footer .right {
+    float: none;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+  }
 }

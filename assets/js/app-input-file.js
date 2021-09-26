@@ -13,8 +13,12 @@
 
   (function enableInputFile () {
     var buttonUpload = document.querySelector('.button-upload');
+    var buttonUploadMobile = document.querySelector('.button-upload-mobile');
     var inputFile = document.querySelector('.input-file');
     buttonUpload.addEventListener('click', function () {
+      inputFile.click();
+    });
+    buttonUploadMobile.addEventListener('click', function () {
       inputFile.click();
     });
     inputFile.addEventListener('change', handleInputFile);

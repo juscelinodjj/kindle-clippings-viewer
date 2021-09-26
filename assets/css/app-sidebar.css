@@ -9,6 +9,10 @@
   width: 320px;
 }
 
+.sidebar .button-upload-mobile {
+  display: none;
+}
+
 .sidebar .sidebar-container {
   height: calc(100% - 15px); /* padding bottom */
   overflow: auto;
@@ -57,4 +61,65 @@
   display: block;
   font-size: 14px;
   margin-top: 8px;
+}
+
+@media only screen and (max-width: 768px) {
+  .hide-mobile {
+    display: none;
+  }
+
+  .sidebar {
+    background-color: #fff;
+    float: none;
+    height: calc(100% - 50px);
+    padding: 10px;
+    position: absolute;
+    text-align: right;
+    top: 50px;
+    width: 100%;
+  }
+
+  .sidebar .button-upload-mobile {
+    background-color: transparent;
+    border: 1px solid #d4d4d4;
+    color: #707f8e;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 6px 10px;
+
+  }
+
+  .sidebar .button-upload-mobile i {
+    color: #8a96a3;
+    margin-right: 10px;
+  }
+
+  .sidebar .sidebar-container {
+    height: calc(100% - 33px);
+    padding-right: 0;
+  }
+
+  .sidebar .sidebar-container .button:last-child {
+    margin-bottom: 10px;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .sidebar .sidebar-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .sidebar .sidebar-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar .sidebar-container .button {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .sidebar .sidebar-container .button:hover {
+    color: #9e9fa2;
+  }
 }
