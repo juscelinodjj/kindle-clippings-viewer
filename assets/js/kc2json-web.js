@@ -5,17 +5,23 @@ var kc2json = (function () {
     'br': {
       'highlight': 'destaque',
       'note': 'nota',
-      'bookmark': 'marcador'
+      'bookmark': 'marcador',
+      'page': 'página',
+      'position': 'posição'
     },
     'es': {
       'highlight': 'subrayado',
       'note': 'nota',
-      'bookmark': 'marcador'
+      'bookmark': 'marcador',
+      'page': 'página',
+      'position': 'posición'
     },
     'en': {
       'highlight': 'highlight',
       'note': 'note',
-      'bookmark': 'bookmark'
+      'bookmark': 'bookmark',
+      'page': 'page',
+      'position': 'position'
     }
   };
 
@@ -54,6 +60,22 @@ var kc2json = (function () {
       }
     }
     return false;
+  }
+
+  function getTypeInDocumentLang (lang, fileLang) {
+    return {
+      'highlight': lang[fileLang]['highlight'],
+      'note': lang[fileLang]['note'],
+      'bookmark': lang[fileLang]['bookmark']
+    };
+  }
+
+  function getStringPage (lang, fileLang) {
+    return lang[fileLang]['page'];
+  }
+
+  function getStringPosition (lang, fileLang) {
+    return lang[fileLang]['position'];
   }
 
   function removeCharCode65279 (string) {
@@ -110,15 +132,20 @@ var kc2json = (function () {
       var type = typesInDocumentLang[key];
       var match = secondLine.indexOf(type) > -1;
       if (match) {
-        return key;
+        return type;
       }
     }
   }
 
-  function getInfoFromClipping (typesInDocumentLang, clipping) {
+  function getInfoFromClipping (parameters) {
+    var typesInDocumentLang = parameters['typesInDocumentLang'];
+    var clipping = parameters['clipping'];
+    var stringPage = parameters['stringPage'];
+    var stringPosition = parameters['stringPosition'];
     var text = getText(clipping);
-    var page = getPage(clipping);
-    var position = getPosition(clipping);
+    var pageNumber = getPage(clipping);
+    var page = pageNumber ? stringPage + ' ' + pageNumber : pageNumber;
+    var position = stringPosition + ' ' + getPosition(clipping);
     var date = getDate(clipping);
     var type = getType(typesInDocumentLang, clipping);
     var object = {type, text, page, position, date};
@@ -127,11 +154,20 @@ var kc2json = (function () {
     return object;
   }
 
-  function parseClipping (clippings, typesInDocumentLang) {
+  function parseClipping (parameters) {
+    var clippings = parameters['clippings'];
+    var typesInDocumentLang = parameters['typesInDocumentLang'];
+    var stringPage = parameters['stringPage'];
+    var stringPosition = parameters['stringPosition'];
     var parsedClippings = {'books': {}};
     for (var index in clippings) {
       var clipping = clippings[index];
-      var info = getInfoFromClipping(typesInDocumentLang, clipping);
+      var info = getInfoFromClipping({
+        'typesInDocumentLang': typesInDocumentLang,
+        'clipping': clipping,
+        'stringPage': stringPage,
+        'stringPosition': stringPosition,
+      });
       var titleAndAuthor = getTitleAndAuthor(clipping);
       var existsKey = parsedClippings['books'][titleAndAuthor];
       if (!existsKey) {
@@ -143,8 +179,15 @@ var kc2json = (function () {
   }
 
   function start (lang, fileLang, clippings) {
-    var typesInDocumentLang = lang[fileLang];
-    var parsedClippings = parseClipping(clippings, typesInDocumentLang);
+    var typesInDocumentLang = getTypeInDocumentLang(lang, fileLang);
+    var stringPage = getStringPage(lang, fileLang);
+    var stringPosition = getStringPosition(lang, fileLang);
+    var parsedClippings = parseClipping({
+      'clippings': clippings,
+      'typesInDocumentLang': typesInDocumentLang,
+      'stringPage': stringPage,
+      'stringPosition': stringPosition,
+    });
     parsedClippings['lang'] = fileLang;
     return JSON.stringify(parsedClippings, null, 2);
   }
