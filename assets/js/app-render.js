@@ -11,12 +11,18 @@ var render = (function (sidebarButtons) {
   function parseTitleAndAuthor (titleAndAuthor) {
     var occurrences = titleAndAuthor.match(/(\(.*?\))/g);
     if (!occurrences) {
-      return {'title': titleAndAuthor,'author': ''};
+      return {
+        'title': titleAndAuthor,
+        'author': ''
+      };
     }
     var rawAuthor = occurrences[occurrences.length - 1];
     var author = rawAuthor.replace(/[\(\)]/g, '');
-    var title = titleAndAuthor.replace(rawAuthor, '');
-    return {title, author};
+    var title = titleAndAuthor.replace(rawAuthor, '').trim();
+    return {
+      'title': title,
+      'author': author
+    };
   }
 
   function encodeDataClippings (clippings) {
