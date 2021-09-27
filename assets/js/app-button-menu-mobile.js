@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  function openMenu (event) {
+  function showSidebar (event) {
     var buttonMenuMobile = event.currentTarget;
     var buttonMenuMobileIcon = buttonMenuMobile.querySelector('i');
     buttonMenuMobileIcon.classList.toggle('fa-bars');
@@ -12,6 +12,6 @@
 
   (function enableButtonMenuMobile () {
     var buttonMenuMobile = document.querySelector('.button-menu-mobile');
-    buttonMenuMobile.addEventListener('click', openMenu);
+    buttonMenuMobile.addEventListener('click', showSidebar);
   })();
 })();
