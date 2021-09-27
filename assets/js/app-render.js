@@ -1,4 +1,4 @@
-var render = (function () {
+var render = (function (sidebarButtons) {
   'use strict';
 
   function clearSectionClippings () {
@@ -108,29 +108,12 @@ var render = (function () {
     sectionContainer.innerHTML = markupClippings;
   }
 
-  function hideMenuMobile () {
-    var buttonMenuMobile = document.querySelector('.button-menu-mobile');
-    var isVisible = buttonMenuMobile.offsetLeft > 0;
-    if (isVisible) {
-      buttonMenuMobile.click();
-    }
-  }
-
-  function enableButtonsInSidebar () {
-    var buttons = document.querySelectorAll('.sidebar-container > .button');
-    for (var i = 0; i < buttons.length; i++) {
-      var button = buttons[i];
-      button.addEventListener('click', hideMenuMobile);
-      button.addEventListener('click', renderClippings);
-    }
-  }
-
   function renderSidebar (myClippings) {
     var markup = getSidebarMarkup(myClippings);
     var sidebarContainer = document.querySelector('.sidebar-container');
     sidebarContainer.scrollTop = 0;
     sidebarContainer.innerHTML = markup;
-    enableButtonsInSidebar();
+    sidebarButtons.active(renderClippings);
   }
 
   function start (myClippings) {
@@ -146,4 +129,4 @@ var render = (function () {
   }
 
   return {'run': run};
-})();
+})(sidebarButtons);
