@@ -71,7 +71,7 @@ var render = (function () {
       var text = !rawText ? rawText
         : rawText.replace(/[<>]/g, '').replace(/\n/g, '<br>');
       var markupSpanPage = !page ? ''
-        : '<span class="span-page">Page ' + page + '</span>';
+        : '<span class="span-page">' + page + '</span>';
       var markupSpanText = (type === 'bookmark' || !text) ? ''
         : '<span class="span-text">' + text + '</span>';
       var markupSection = '<div class="section-clipping">'
@@ -80,7 +80,7 @@ var render = (function () {
         + '<div class="left">'
         + '<span class="span-type">' + type + '</span>'
         + markupSpanPage
-        + '<span class="span-position">Position ' + position + '</span>'
+        + '<span class="span-position">' + position + '</span>'
         + '</div>'
         + '<div class="right">'
         + '<span class="span-date">' + date + '</span>'
