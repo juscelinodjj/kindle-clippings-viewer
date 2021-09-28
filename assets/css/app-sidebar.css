@@ -1,5 +1,5 @@
 .sidebar {
-  background-color: #fff;
+  background-color: #eff3f3;
   border-left: 1px solid #ececec;
   box-sizing: border-box;
   float: right;
@@ -19,29 +19,8 @@
   padding-right: 10px;
 }
 
-/* scrollbar on Firefox */
-.sidebar .sidebar-container {
-  scrollbar-width: thin;
-  scrollbar-color: #d4d4d4 transparent;
-}
-
-/* scrollbar on Chrome, Edge, and Safari */
-.sidebar .sidebar-container::-webkit-scrollbar {
-  width: 12px;
-}
-
-.sidebar .sidebar-container::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.sidebar .sidebar-container::-webkit-scrollbar-thumb {
-  background-color: #d4d4d4;
-  border: 2px solid transparent;
-}
-
 .sidebar .sidebar-container .button {
-  border: 1px solid #d4d4d4;
-  color: #9e9fa2;
+  color: #959ea0;
   cursor: pointer;
   font-size: 16px;
   margin-bottom: 15px;
@@ -58,6 +37,7 @@
 
 .sidebar .sidebar-container .button .span-author {
   color: #bbbbbd;
+  color: #acb3b4;
   display: block;
   font-size: 14px;
   margin-top: 8px;
@@ -69,7 +49,6 @@
   }
 
   .sidebar {
-    background-color: #fff;
     float: none;
     height: calc(100% - 50px);
     padding: 10px;
@@ -81,8 +60,8 @@
 
   .sidebar .button-upload-mobile {
     background-color: transparent;
-    border: 1px solid #d4d4d4;
-    color: #707f8e;
+    border: 1px solid #3498db;
+    color: #3498db;
     display: inline-block;
     font-size: 16px;
     margin-bottom: 10px;
@@ -91,17 +70,13 @@
   }
 
   .sidebar .button-upload-mobile i {
-    color: #8a96a3;
+    color: #3498db;
     margin-right: 10px;
   }
 
   .sidebar .sidebar-container {
     height: calc(100% - 33px);
     padding-right: 0;
-  }
-
-  .sidebar .sidebar-container .button:last-child {
-    margin-bottom: 10px;
   }
 
   /* Hide scrollbar for IE, Edge and Firefox */
@@ -115,8 +90,13 @@
   }
 
   .sidebar .sidebar-container .button {
+    color: #75767b;
     margin-bottom: 10px;
     text-align: left;
+  }
+
+  .sidebar .sidebar-container .button:last-child {
+    margin-bottom: 10px;
   }
 
   .sidebar .sidebar-container .button:hover {
