@@ -1,13 +1,15 @@
 .header {
-  background-color: #fff;
-  border-bottom: 1px solid #ebebeb;
+  background-color: #3498db;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   box-sizing: border-box;
   height: 50px;
   padding: 0 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .header .title {
-  color: #707f8e;
+  color: #fff;
   display: inline-block;
   font-size: 20px;
   padding: 15px;
@@ -15,8 +17,8 @@
 
 .header .button-upload {
   background-color: transparent;
-  border: 1px solid #d4d4d4;
-  color: #707f8e;
+  border: 1px solid #fff;
+  color: #fff;
   cursor: pointer;
   float: right;
   font-size: 16px;
@@ -26,7 +28,7 @@
 }
 
 .header .button-upload i {
-  color: #8a96a3;
+  color: #fff;
   margin-right: 10px;
 }
 
@@ -49,8 +51,8 @@
 
   .header .button-menu-mobile {
     background-color: transparent;
-    border: 1px solid #d4d4d4;
-    color: #707f8e;
+    border: 1px solid #fff;
+    color: #fff;
     display: inline;
     float: right;
     font-size: 16px;
