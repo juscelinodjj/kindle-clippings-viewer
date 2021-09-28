@@ -1,5 +1,5 @@
 .section-clippings {
-  background-color: #fff;
+  background-color: #f9f9f9;
   box-sizing: border-box;
   float: left;
   height: calc(100% - 50px);  /* header */
@@ -25,7 +25,7 @@
 }
 
 .section-clippings .section-info .span-author {
-  color: #8c9397;
+  color: #818a93;
   display: block;
   font-size: 14px;
   margin-top: 5px;
@@ -50,13 +50,14 @@
 }
 
 .section-clippings .section-container .section-clipping {
-  border: 1px solid #dcdcdc;
-  margin-bottom: 30px;
+  background-color: transparent;
+  border: 1px solid #d4d4d4;
+  margin-bottom: 20px;
   padding: 10px;
 }
 
 .section-clippings .section-container .section-clipping .span-text {
-  color: #818a93;
+  color: #697678;
   display: block;
   font-family: sans-serif;
   font-size: 18px;
@@ -79,7 +80,7 @@
 }
 
 .section-clippings .section-container .section-clipping .footer .left span {
-  color: #808b96;
+  color: #7a8587;
   font-size: 12px;
 }
 
@@ -100,7 +101,7 @@
 }
 
 .section-clippings .section-container .section-clipping .footer .right .span-date {
-  color: #808b96;
+  color: #7a8587;
   font-size: 12px;
 }
 
