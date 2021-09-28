@@ -2,7 +2,7 @@
   "lang": "pt-BR",
   "name": "Kindle Clippings Viewer",
   "short_name": "KC Viewer",
-  "description": "",
+  "description": "A simple way to view Kindle clippings.",
   "start_url": ".",
   "display": "standalone",
   "orientation": "portrait",
