@@ -12,5 +12,5 @@ A simple way to view Kindle clippings.
 ## Credits
 - Icons made by [Freepik](https://www.flaticon.com/authors/freepik)
 
-## Licence
+## License
 Distributed under the MIT license. See [LICENSE](https://github.com/juscelinodjj/kindle-clippings-viewer/blob/main/LICENSE) for more information.
