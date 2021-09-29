@@ -72,7 +72,7 @@ var render = (function (sidebarButtons) {
       var type = clipping['type'];
       var rawText = clipping['text'];
       var page = clipping['page'];
-      var position = clipping['position'];
+      var location = clipping['location'];
       var date = clipping['date'];
       var text = !rawText ? rawText
         : rawText.replace(/[<>]/g, '').replace(/\n/g, '<br>');
@@ -86,7 +86,7 @@ var render = (function (sidebarButtons) {
         + '<div class="left">'
         + '<span class="span-type">' + type + '</span>'
         + markupSpanPage
-        + '<span class="span-position">' + position + '</span>'
+        + '<span class="span-location">' + location + '</span>'
         + '</div>'
         + '<div class="right">'
         + '<span class="span-date">' + date + '</span>'
