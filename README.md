@@ -7,7 +7,9 @@ A simple way to view Kindle clippings.
 - Portuguese
 - Spanish
 - English
-> This will be better in the future
+- French
+- Italian
+- German
 
 ## Credits
 - Icons made by [Freepik](https://www.flaticon.com/authors/freepik)
