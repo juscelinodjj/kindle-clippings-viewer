@@ -7,21 +7,42 @@ var kc2json = (function () {
       'note': 'nota',
       'bookmark': 'marcador',
       'page': 'página',
-      'position': 'posição'
+      'location': 'posição'
     },
     'es': {
       'highlight': 'subrayado',
       'note': 'nota',
       'bookmark': 'marcador',
       'page': 'página',
-      'position': 'posición'
+      'location': 'posición'
     },
     'en': {
       'highlight': 'highlight',
       'note': 'note',
       'bookmark': 'bookmark',
       'page': 'page',
-      'position': 'position'
+      'location': 'location'
+    },
+    'fr': {
+      'highlight': 'surlignement',
+      'note': 'note',
+      'bookmark': 'signet',
+      'page': 'page',
+      'location': 'emplacement'
+    },
+    'it': {
+      'highlight': 'evidenziazione',
+      'note': 'nota',
+      'bookmark': 'segnalibro',
+      'page': 'pagina',
+      'location': 'posizione'
+    },
+    'de': {
+      'highlight': 'markierung',
+      'note': 'notiz',
+      'bookmark': 'lesezeichen',
+      'page': 'seite',
+      'location': 'position'
     }
   };
 
@@ -74,8 +95,8 @@ var kc2json = (function () {
     return lang[fileLang]['page'];
   }
 
-  function getStringPosition (lang, fileLang) {
-    return lang[fileLang]['position'];
+  function getStringLocation (lang, fileLang) {
+    return lang[fileLang]['location'];
   }
 
   function removeCharCode65279 (string) {
@@ -112,12 +133,12 @@ var kc2json = (function () {
     return page.match(/\d+/)[0];
   }
 
-  function getPosition (clipping) {
+  function getLocation (clipping) {
     var secondLine = clipping[1];
-    var position = secondLine.match(/\|/g).length === 1
+    var location = secondLine.match(/\|/g).length === 1
       ? secondLine.match(/-\s(.*?)\s\|/)[1]
       : secondLine.match(/\|\s(.*?)\s\|/)[1];
-    return position.match(/[\d-]+/)[0];
+    return location.match(/[\d-]+/)[0];
   }
 
   function getDate (clipping) {
@@ -141,14 +162,14 @@ var kc2json = (function () {
     var typesInDocumentLang = parameters['typesInDocumentLang'];
     var clipping = parameters['clipping'];
     var stringPage = parameters['stringPage'];
-    var stringPosition = parameters['stringPosition'];
+    var stringLocation = parameters['stringLocation'];
     var text = getText(clipping);
     var pageNumber = getPage(clipping);
     var page = pageNumber ? stringPage + ' ' + pageNumber : pageNumber;
-    var position = stringPosition + ' ' + getPosition(clipping);
+    var location = stringLocation + ' ' + getLocation(clipping);
     var date = getDate(clipping);
     var type = getType(typesInDocumentLang, clipping);
-    var object = {type, text, page, position, date};
+    var object = {type, text, page, location, date};
     object['type'] === 'bookmark' ? delete object['text'] : null;
     !object['page'] ? delete object['page'] : null;
     return object;
@@ -158,7 +179,7 @@ var kc2json = (function () {
     var clippings = parameters['clippings'];
     var typesInDocumentLang = parameters['typesInDocumentLang'];
     var stringPage = parameters['stringPage'];
-    var stringPosition = parameters['stringPosition'];
+    var stringLocation = parameters['stringLocation'];
     var parsedClippings = {'books': {}};
     for (var index in clippings) {
       var clipping = clippings[index];
@@ -166,7 +187,7 @@ var kc2json = (function () {
         'typesInDocumentLang': typesInDocumentLang,
         'clipping': clipping,
         'stringPage': stringPage,
-        'stringPosition': stringPosition,
+        'stringLocation': stringLocation,
       });
       var titleAndAuthor = getTitleAndAuthor(clipping);
       var existsKey = parsedClippings['books'][titleAndAuthor];
@@ -181,12 +202,12 @@ var kc2json = (function () {
   function start (lang, fileLang, clippings) {
     var typesInDocumentLang = getTypeInDocumentLang(lang, fileLang);
     var stringPage = getStringPage(lang, fileLang);
-    var stringPosition = getStringPosition(lang, fileLang);
+    var stringLocation = getStringLocation(lang, fileLang);
     var parsedClippings = parseClipping({
       'clippings': clippings,
       'typesInDocumentLang': typesInDocumentLang,
       'stringPage': stringPage,
-      'stringPosition': stringPosition,
+      'stringLocation': stringLocation,
     });
     parsedClippings['lang'] = fileLang;
     return JSON.stringify(parsedClippings, null, 2);
