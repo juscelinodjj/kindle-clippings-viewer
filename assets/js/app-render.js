@@ -1,4 +1,4 @@
-var render = (function (sidebarButtons) {
+var render = (function (appAlert, sidebarButtons) {
   'use strict';
 
   function clearSectionClippings () {
@@ -131,8 +131,8 @@ var render = (function (sidebarButtons) {
     var myClippings = JSON.parse(json);
     var error = myClippings['error'];
     var message = myClippings['message'];
-    error ? console.log('message: ' + message) : start(myClippings);
+    error ? appAlert.run(message) : start(myClippings);
   }
 
   return {'run': run};
-})(sidebarButtons);
+})(appAlert, sidebarButtons);
