@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/app-alert.css">
     <link rel="stylesheet" href="assets/css/app-header.css">
     <link rel="stylesheet" href="assets/css/app-section-clippings.css">
     <link rel="stylesheet" href="assets/css/app-sidebar.css">
@@ -35,6 +36,9 @@
   </head>
   <body>
     <div class="app">
+      <div class="alert">
+        <p class="message"></p>
+      </div>
       <div class="header">
         <h1 class="title">Kindle Clippings Viewer</h1>
         <button class="button-upload">
@@ -60,6 +64,7 @@
       <input type="file" class="input-file" accept=".txt">
     </div>
     <script src="assets/js/kc2json-web.js"></script>
+    <script src="assets/js/app-alert.js"></script>
     <script src="assets/js/app-sidebar-buttons.js"></script>
     <script src="assets/js/app-render.js"></script>
     <script src="assets/js/app-input-file.js"></script>

@@ -1,0 +1,35 @@
+.alert {
+  background-color: #2980b9;
+  color: #fff;
+  font-size: 18px;
+  height: 0;
+  overflow: hidden;
+  text-align: center;
+  transition: height 0.4s ease-in-out;
+}
+
+.alert .message {
+  padding: 20px 0;
+}
+
+.show-alert {
+  height: 58px;
+}
+
+@media only screen and (max-width: 768px) {
+  .alert {
+    font-size: 16px;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .alert .message {
+    margin-top: 7px;
+    padding: 10px 0;
+  }
+
+  .show-alert {
+    height: 50px;
+  }
+}
