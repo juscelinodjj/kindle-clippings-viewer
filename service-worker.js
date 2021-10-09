@@ -22,10 +22,13 @@ const precacheResources = [
   '/assets/img/favicon/maskable-icon.png',
   '/assets/img/favicon/apple-touch-icon.png',
   '/assets/js/kc2json-web.js',
-  '/assets/js/app-sidebar-buttons.js',
-  '/assets/js/app-render.js',
+  '/assets/js/app.js',
+  '/assets/js/app-alert.js',
+  '/assets/js/app-header.js',
+  '/assets/js/app-section-clippings.js',
+  '/assets/js/app-sidebar.js',
   '/assets/js/app-input-file.js',
-  '/assets/js/app-button-menu-mobile.js',
+  '/assets/js/app-render.js',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/'
     + 'font-awesome.min.css',
   'https://fonts.googleapis.com/css2?family=Varela+Round&display=swap'
