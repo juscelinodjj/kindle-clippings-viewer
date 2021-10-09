@@ -11,6 +11,7 @@ const precacheResources = [
   '/index.html',
   '/assets/css/reset.css',
   '/assets/css/app.css',
+  '/assets/css/app-alert.css',
   '/assets/css/app-header.css',
   '/assets/css/app-section-clippings.css',
   '/assets/css/app-sidebar.css',
