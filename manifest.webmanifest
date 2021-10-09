@@ -1,7 +1,7 @@
 {
   "lang": "en",
   "name": "Kindle Clippings Viewer",
-  "short_name": "KC Viewer",
+  "short_name": "Kindle Clippings Viewer",
   "description": "A simple way to view Kindle clippings.",
   "start_url": ".",
   "display": "standalone",
