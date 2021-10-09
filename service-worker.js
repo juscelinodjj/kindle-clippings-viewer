@@ -2,7 +2,7 @@
 // https://developers.google.com/codelabs/pwa-training/pwa03--going-offline
 
 // Choose a cache name
-const cacheName = 'cache-07-10-2021';
+const cacheName = 'cache-09-10-2021';
 
 // List the files to precache
 const precacheResources = [
