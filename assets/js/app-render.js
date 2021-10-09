@@ -1,13 +1,6 @@
-var render = (function (appAlert, sidebarButtons) {
-  'use strict';
+'use strict';
 
-  function clearSectionClippings () {
-    var sectionInfo = document.querySelector('.section-info');
-    var sectionContainer = document.querySelector('.section-container');
-    sectionInfo.innerHTML = '';
-    sectionContainer.innerHTML = '';
-  }
-
+app.render = (function () {
   function parseTitleAndAuthor (titleAndAuthor) {
     var occurrences = titleAndAuthor.match(/(\(.*?\))/g);
     if (!occurrences) {
@@ -34,12 +27,12 @@ var render = (function (appAlert, sidebarButtons) {
   }
 
   function getSidebarMarkup (myClippings) {
-    var books = myClippings['books'];
+    var books = myClippings.books;
     var markupSidebar = '';
     for (var titleAndAuthor in books) {
       var parsedTitleAndAuthor = parseTitleAndAuthor(titleAndAuthor);
-      var title = parsedTitleAndAuthor['title'];
-      var author = parsedTitleAndAuthor['author'];
+      var title = parsedTitleAndAuthor.title;
+      var author = parsedTitleAndAuthor.author;
       var clippings = encodeDataClippings(books[titleAndAuthor]);
       var markupButton = '<div class="button">'
         + '<span class="span-title">' + title + '</span>'
@@ -69,11 +62,11 @@ var render = (function (appAlert, sidebarButtons) {
     var markupClippings = '';
     for (var index in clippings) {
       var clipping = clippings[index];
-      var type = clipping['type'];
-      var rawText = clipping['text'];
-      var page = clipping['page'];
-      var location = clipping['location'];
-      var date = clipping['date'];
+      var type = clipping.type;
+      var rawText = clipping.text;
+      var page = clipping.page;
+      var location = clipping.location;
+      var date = clipping.date;
       var text = !rawText ? rawText
         : rawText.replace(/[<>]/g, '').replace(/\n/g, '<br>');
       var markupSpanPage = !page ? ''
@@ -98,7 +91,7 @@ var render = (function (appAlert, sidebarButtons) {
     return markupClippings;
   }
 
-  function renderClippings (event) {
+  function sectionClippings (event) {
     var button = event.currentTarget;
     var spanData = button.querySelector('.span-data');
     var title = button.querySelector('.span-title').textContent;
@@ -114,25 +107,15 @@ var render = (function (appAlert, sidebarButtons) {
     sectionContainer.innerHTML = markupClippings;
   }
 
-  function renderSidebar (myClippings) {
+  function sidebar (myClippings) {
     var markup = getSidebarMarkup(myClippings);
     var sidebarContainer = document.querySelector('.sidebar-container');
     sidebarContainer.scrollTop = 0;
     sidebarContainer.innerHTML = markup;
-    sidebarButtons.active(renderClippings);
   }
 
-  function start (myClippings) {
-    clearSectionClippings();
-    renderSidebar(myClippings);
-  }
-
-  function run (json) {
-    var myClippings = JSON.parse(json);
-    var error = myClippings['error'];
-    var message = myClippings['message'];
-    error ? appAlert.run(message) : start(myClippings);
-  }
-
-  return {'run': run};
-})(appAlert, sidebarButtons);
+  return {
+    'sidebar': sidebar,
+    'sectionClippings': sectionClippings
+  };
+})();
