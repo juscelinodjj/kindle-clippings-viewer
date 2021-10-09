@@ -1,7 +1,7 @@
 # Kindle Clippings Viewer
 A simple way to view Kindle clippings.
 <br>
-[https://kcviewer.netlify.app](https://kcviewer.netlify.app/)
+[https://kindle-clippings-viewer.netlify.app](https://kindle-clippings-viewer.netlify.app/)
 
 ## Screenshot
 <p>
