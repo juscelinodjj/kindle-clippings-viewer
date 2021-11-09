@@ -5,12 +5,17 @@ app.inputFile = (function () {
   var inputFile = document.querySelector('.input-file');
 
   function handleInputFile () {
+    var file = inputFile.files[0];
+    if (file.type !== 'text/plain') {
+      fileContent = file.type;
+      return;
+    }
     var fileReader = new FileReader();
     fileReader.onload = function () {
       fileContent = fileReader.result;
       inputFile.value = '';
     };
-    fileReader.readAsText(inputFile.files[0]);
+    fileReader.readAsText(file);
   }
 
   function getFileContent () {
