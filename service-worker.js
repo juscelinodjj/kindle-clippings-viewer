@@ -2,7 +2,7 @@
 // https://developers.google.com/codelabs/pwa-training/pwa03--going-offline
 
 // Choose a cache name
-const cacheName = 'cache-09-10-2021';
+const cacheName = 'cache-08-11-2021';
 
 // List the files to precache
 const precacheResources = [
@@ -28,6 +28,7 @@ const precacheResources = [
   '/assets/js/app-section-clippings.js',
   '/assets/js/app-sidebar.js',
   '/assets/js/app-input-file.js',
+  '/assets/js/app-drag-drop.js',
   '/assets/js/app-render.js',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/'
     + 'font-awesome.min.css',
