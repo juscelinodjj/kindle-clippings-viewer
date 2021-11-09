@@ -8,6 +8,7 @@ var app = {
   sectionClippings: undefined,
   sidebar: undefined,
   inputFile: undefined,
+  dragDrop: undefined,
   render: undefined
 };
 
@@ -25,8 +26,10 @@ var app = {
   }
 
   function handleFileContent () {
-    var fileContent = app.inputFile.getFileContent();
+    var fileContent = app.inputFile.getFileContent()
+      || app.dragDrop.getFileContent();
     app.inputFile.clearFileContent();
+    app.dragDrop.clearFileContent();
     if (fileContent) {
       var json = app.kc2json.run(fileContent);
       var data = JSON.parse(json);
